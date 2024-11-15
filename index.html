@@ -110,8 +110,11 @@
 }
 
 .carousel-images img {
-    width: 100%;
-    object-fit: cover;
+    width: auto; 
+    max-height: 300px; 
+    object-fit: contain; 
+    margin: auto;
+    display: block;
     border-radius: 8px;
 }
 
@@ -166,6 +169,9 @@
     width: 100%;
 }
 @media (max-width: 768px) {
+     .carousel-images img {
+        max-height: 200px; 
+    }
             .timeline {
                 flex-direction: column;
                 margin: auto;
