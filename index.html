@@ -431,6 +431,29 @@
 </div>
 
 <script>
+    let currentSlide = 0;
+const images = document.querySelectorAll('.carousel-images img');
+
+function showSlide(index) {
+    images.forEach((img, i) => {
+        img.style.display = (i === index) ? 'block' : 'none';
+    });
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % images.length;
+    showSlide(currentSlide);
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + images.length) % images.length;
+    showSlide(currentSlide);
+}
+
+// Показуємо перше зображення на завантаженні
+showSlide(currentSlide);
+
+    
     document.addEventListener("DOMContentLoaded", function() {
        let currentIndex = 0;
         function showSlide(index) {
